@@ -39,14 +39,12 @@ if __name__ == "__main__":
     filename = args.filename
 
     error_count += 1
-
     fe = filename.split(".")[-1]  #File extension
 
-    if fe == "":
+    if not fe:
         _exit("No file provided.", error_count)
 
     error_count += 1
-
     if fe not in file_extensions:
         _exit("File extension not supported.", error_count)
 
@@ -107,7 +105,7 @@ if __name__ == "__main__":
         _exit(e, error_count)
 
     error_count += 1
-
+    
     #Write back into file 
     for line in lines:
         f.write(line)
